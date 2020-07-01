@@ -37,6 +37,7 @@ function generatePassword() {
   // If yes, add lowercase letters to the array off possible characters (the numbers 97 - 122 are ascii values for lowercase letters).
   if (includeLower) {
     asciiToCharArray(97, 122);
+    console.log(possibleCharArray); // REMOVE AFTER
   }
 
   // Ask the user whether they want to include uppercase letters.
@@ -44,6 +45,7 @@ function generatePassword() {
   // If yes, add uppercase letters to the array of possible characters (ascii 65-90)
   if (includeUpper) {
     asciiToCharArray(65, 90);
+    console.log(possibleCharArray); // REMOVE AFTER
   }
 
   // Ask the user whether they want to include numbers.
@@ -51,6 +53,7 @@ function generatePassword() {
   // If yes, add numbers to the array of possible characters (ascii 48-57)
   if (includeNumbers) {
     asciiToCharArray(48, 57);
+    console.log(possibleCharArray); // REMOVE AFTER
   }
 
   // Ask the user whether they want to include special charcters.
@@ -61,10 +64,27 @@ function generatePassword() {
     asciiToCharArray(58, 64);
     asciiToCharArray(91, 96);
     asciiToCharArray(123-126);
+    console.log(possibleCharArray); // REMOVE AFTER
   }
 
+  // Initialize blank PW array.
+  let pwArray = [];
 
+  // Loop through numChar number of times to add the correct number of characters to the array:
+  for (let i = 0; i < numChar; i++) {
+    randomIndex = randomRange(0, possibleCharArray.length);
+    pwArray.push(possibleCharArray[randomIndex]);
+    console.log(pwArray);
+  }
 
+  // Create a string from the PW array with join.
+  const pwString = pwArray.join("")
+
+  //Clear the array of possible characters in case the user hits the "Generate Password again.
+  possibleCharArray = [];
+
+  // Return the password string
+  return pwString;
 
 }
 
@@ -72,7 +92,11 @@ function generatePassword() {
 function asciiToCharArray (min, max) {
   for (let i = min; i < max + 1; i++) {
     possibleCharArray.push(String.fromCharCode(i));
-    console.log(possibleCharArray);
   }
 }
 
+// Cited: https://www.geeksforgeeks.org/how-to-generate-random-number-in-given-range-using-javascript/
+// Function to return a random integer within a given range (min is inclusive, max is not).
+function randomRange(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
