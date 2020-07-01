@@ -67,6 +67,14 @@ function generatePassword() {
     console.log(possibleCharArray); // REMOVE AFTER
   }
 
+  console.log(possibleCharArray);
+
+  // If no characters are chosen for the password (and length of possibleCharArray is 0), alert an error and end the program.
+  if (!possibleCharArray.length) {
+    alert("You must choose at least one type of character to include. Please click the GENERATE PASSWORD button again to continue.");
+    return;
+  }
+
   // Initialize blank PW array.
   let pwArray = [];
 
