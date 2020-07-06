@@ -25,10 +25,11 @@ function generatePassword() {
   // If the user clicks cancel, end the program.
   if (numChar === null) return;
 
-  // Validates that the password is a number between 8 and 128, inclusive; otherwise alerts with error and prompts for length again
-  while (numChar < 8 || numChar > 128 || isNaN(numChar)) {
+  // Validates that the password is an integer number between 8 and 128, inclusive; otherwise alerts with error and prompts for length again
+  while (numChar < 8 || numChar > 128 || isNaN(numChar) || numChar % 1 !== 0) {
     alert("You must choose a number between 8 and 128.");
     numChar = prompt("How many characters do you want in the password? (Must be at least 8 and no more than 128.)");
+    // If the user clicks cancel while within this loop, ends the program.
     if (numChar === null) return;
   }
 
@@ -37,7 +38,6 @@ function generatePassword() {
   // If yes, add lowercase letters to the array off possible characters (the numbers 97 - 122 are ascii values for lowercase letters).
   if (includeLower) {
     asciiToCharArray(97, 122);
-    console.log(possibleCharArray); // REMOVE AFTER
   }
 
   // Ask the user whether they want to include uppercase letters.
@@ -45,7 +45,6 @@ function generatePassword() {
   // If yes, add uppercase letters to the array of possible characters (ascii 65-90)
   if (includeUpper) {
     asciiToCharArray(65, 90);
-    console.log(possibleCharArray); // REMOVE AFTER
   }
 
   // Ask the user whether they want to include numbers.
@@ -53,7 +52,6 @@ function generatePassword() {
   // If yes, add numbers to the array of possible characters (ascii 48-57)
   if (includeNumbers) {
     asciiToCharArray(48, 57);
-    console.log(possibleCharArray); // REMOVE AFTER
   }
 
   // Ask the user whether they want to include special charcters.
@@ -64,10 +62,7 @@ function generatePassword() {
     asciiToCharArray(58, 64);
     asciiToCharArray(91, 96);
     asciiToCharArray(123-126);
-    console.log(possibleCharArray); // REMOVE AFTER
   }
-
-  console.log(possibleCharArray);
 
   // If no characters are chosen for the password (and length of possibleCharArray is 0), alert an error and end the program.
   if (!possibleCharArray.length) {
@@ -82,7 +77,6 @@ function generatePassword() {
   for (let i = 0; i < numChar; i++) {
     randomIndex = randomRange(0, possibleCharArray.length);
     pwArray.push(possibleCharArray[randomIndex]);
-    console.log(pwArray);
   }
 
   // Create a string from the PW array with join.
