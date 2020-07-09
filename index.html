@@ -1,37 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Random Password Generator</title>
+        <!-- Bootstrap 4 sytlesheet -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/e5541abac7.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="pwgen.css">
+    </head>
 
-  <body>
-    <!-- Box for the password generator -->
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-        </div>
-      </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
+    <body>
+        <main>
+            <div class="jumbotron passwordContainer">
+                <h1>Random Password Generator</h1>
+                <!-- This is where the password will be displayed -->
+                <div class="pwOutput-group">
+                    <div class="pwOutput-group-prepend">
+                      <span class="pwOutPut-group-text">Use this random and secure password for all of your security needs.</span>
+                    </div>
+                    <textarea readonly class="form-control" id="password" aria-label="Gnerated Password" placeholder="Your Password"></textarea>
+                </div>
+            </div>
 
+            <div class="optionsContainer">
+                <div class="row mr-3 ml-3">
+                    <div class="col-sm pwLengthOption pb-3">
+                        <label for="numChar">
+                            <h2>Number of Characters:</h2>
+                            <p>(Must be at least 8 and no more than 128.)</p>
+                        </label>
+                        <input type="text" id="numChar" size="10">
+                    </div>
+                    <div class="col-sm checkOptions pb-3">
+                        <h2>Types of characters:</h2>
+                        <div class="checkoption">
+                            <input type="checkbox" class="toclick" id="lowercase" onclick="">
+                            <label for="lowercase">Lowercase letters</label>
+                        </div>
+                        <div class="checkoption">
+                            <input type="checkbox" class="toclick" id="uppercase" onclick="">
+                            <label for="uppercase">UPPERCASE letters</label>
+                        </div>
+                        <div class="checkoption">
+                            <input type="checkbox" class="toclick" id="numbers" onclick="">
+                            <label for="numbers">Numbers</label>
+                        </div>
+                        <div class="checkoption">
+                            <input type="checkbox" class="toclick" id="spechar" onclick="">
+                            <label for="spechar">Special characters (e.g. @, &, >, etc)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button">
+                <button type="button" id="generatepw" class="btn btn-danger btn-lg btn-block">
+                    <i class="fas fa-unlock-alt fa-lg"></i>
+                    Generate Password
+                    <i class="fas fa-lock fa-lg"></i>
+                </button>
+            </div>
+        </main>
+
+
+        <script src="pwgen.js"></script>
+    </body>
 </html>
