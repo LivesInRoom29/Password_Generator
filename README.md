@@ -26,7 +26,7 @@ I wrote the program that would take in certain parameters from the user and outp
 
 * The code that I used to generate a random number within a specific range was adapted from a [GeeksforGeeks](https://www.geeksforgeeks.org/how-to-generate-random-number-in-given-range-using-javascript/) article.
 
-* Thanks to the UNH Bootcamp instructor, TAs, and tutors for providing the class with lots of practice using JavaScript
+* Thanks to the UNH Bootcamp instructor, TAs, and tutors for providing the class with lots of practice using JavaScript.
 
 * Thanks as well to my classmates for sharing their questions in class and during office hours.
 
