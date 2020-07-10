@@ -8,7 +8,7 @@ With this project, I was given the HTML and CSS for a web app to generate a rand
 I wrote the program that would take in certain parameters from the user and output the random password. The user is able choose the length of the password (between 8 and 128, inclusive) and what types of charcters to use (lowercase, uppercase, numbers, and/or special characters).
 
 
-[Password Generator](https://github.com/LivesInRoom29/Password_Generator)
+[Password Generator](https://livesinroom29.github.io/Password_Generator/)
 
 ![pwGenerator_screenshot](https://user-images.githubusercontent.com/61219066/86302368-75161b80-bbd6-11ea-8a77-5559e0ca4ee5.jpg)
 
@@ -27,8 +27,6 @@ I wrote the program that would take in certain parameters from the user and outp
 * The code that I used to generate a random number within a specific range was adapted from a [GeeksforGeeks](https://www.geeksforgeeks.org/how-to-generate-random-number-in-given-range-using-javascript/) article.
 
 * Thanks to the UNH Bootcamp instructor, TAs, and tutors for providing the class with lots of practice using JavaScript.
-
-* Thanks as well to my classmates for sharing their questions in class and during office hours.
 
 * Lastly, as always. thanks to all the wonderful folks who post their questions and answers all over the web - you are life savers!
 
